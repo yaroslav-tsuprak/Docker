@@ -8,4 +8,11 @@ services:
          - "3000:3000"
       environment:
          - PORT=3000
+         - HOST=game.l2expert.ru
+         - MONGO_URL=mongodb://api_db:27017/api
+      depends_on:
+         - api_db
+   
+   api_db:
+      image: mongo:latest
          
